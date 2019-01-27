@@ -17,6 +17,7 @@ The calculator has the following features.
 ![Report](./src/docs/report.png?raw=true "Report")
 
 ## Deployment
+- You must have [Yarn](https://yarnpkg.com/en/), [Composer](https://getcomposer.org/) and [Docker](https://www.docker.com/) on the target machine.
 - Clone the repo locally from [https://github.com/majidmvulle/transferto-exercise](https://github.com/majidmvulle/transferto-exercise). `git clone git@github.com:majidmvulle/transferto-exercise.git`
 - Change into the directory `cd transferto-exercise`
 - Run `./deploy.sh`. This will:
@@ -29,6 +30,6 @@ The calculator has the following features.
 Access the webpage at `http://localhost:81`.
 
 ## Technologies
-- Backend: PHP
-- Frontend: react.js
+- Backend: PHP ([Symfony 4 PHP Framework](https://symfony.com/))
+- Frontend: [react.js](https://reactjs.org/), [Bootstrap 4](https://getbootstrap.com/)
 
