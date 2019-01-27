@@ -1,5 +1,5 @@
 # transferto-exercise
-TransferTo: Senior Software Engineer - Technical Test
+TransferTo: Senior Software Engineer - Technical Test. See the requirements [PDF](./src/docs/TechnicalTest-Senior.pdf).
 
 ## Calcuco Calculator
 The calculator has the following features.
