@@ -24,5 +24,11 @@
     "bootstrap": "^4.2.1",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.0.1"
+  },
+  "scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "./node_modules/@symfony/webpack-encore/bin/encore.js dev",
+    "watch": "./node_modules/@symfony/webpack-encore/bin/encore.js dev --watch",
+    "build": "./node_modules/@symfony/webpack-encore/bin/encore.js production --progress"
   }
 }
