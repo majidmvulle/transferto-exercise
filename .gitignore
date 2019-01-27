@@ -24,7 +24,6 @@
 # Managed by Composer
 /src/app/bootstrap.php.cache
 /src/var/bootstrap.php.cache
-/src/bin/*
 !/symfonybin/console
 !/symfonybin/symfony_requirements
 /src/vendor/
