@@ -1,0 +1,98 @@
+@import "~bootstrap/scss/bootstrap";
+
+$grey-dark: rgb(61, 59, 54);
+$grey-dark-2: rgb(79, 76, 72);
+$grey-whitish: rgb(133, 133, 129);
+$grey-whitisher: rgb(180, 180, 176);
+$white: #ffffff;
+$whitish: #f5f5f5;
+$orange: rgb(250, 156, 42);
+$orange-2: rgb(196, 109, 38);
+
+html{
+  position: relative;
+  min-height: 100%;
+  color: red;
+}
+
+body{
+  margin-bottom: 3em;
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3em;
+  line-height: 3em;
+  background-color: $whitish;
+}
+
+#calculator{
+  background: $grey-dark;
+  color: $white;
+
+  .screen{
+    overflow: hidden;
+    direction: rtl;
+    height: 1.8em;
+    width: 100%;
+    max-width: 100%;
+    font-size: 5em;
+    text-align: right;
+    padding: 0.25em 0.5em;
+    margin-left: 0.15em;
+    overflow: hidden;
+  }
+
+  .digits{
+    > button{
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -o-user-select: none;
+      font-size: 1.25em;
+      border: 1px solid $grey-dark;
+      padding: .75em;
+      background: $grey-whitish;
+      color: $white;
+
+
+      &:active{
+        background: $grey-whitisher;
+      }
+
+      &:active, &:focus, &:visited{
+        outline: none;
+      }
+
+      &.horizontal-sign {
+        background: $grey-dark-2;
+        &:active {
+          background: $grey-whitish;
+        }
+      }
+
+      &.vertical-sign {
+        background: $orange;
+        &.active{
+          background: $orange-2;
+        }
+        &:active {
+          opacity: .75;
+        }
+      }
+    }
+  }
+}
+
+.ellipsis {
+  direction: rtl;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: block;
+  white-space: nowrap;
+}
