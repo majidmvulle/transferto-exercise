@@ -17,15 +17,17 @@ The calculator has the following features.
 ![Report](./src/docs/report.png?raw=true "Report")
 
 ## Deployment
-- You must have [Yarn](https://yarnpkg.com/en/), [Composer](https://getcomposer.org/) and [Docker](https://www.docker.com/) on the target machine.
+- You must have [Docker](https://www.docker.com/) on the target machine.
 - Clone the repo locally from [https://github.com/majidmvulle/transferto-exercise](https://github.com/majidmvulle/transferto-exercise). `git clone git@github.com:majidmvulle/transferto-exercise.git`
 - Change into the directory `cd transferto-exercise`
 - Run `./deploy.sh`. This will:
-	- 	copy the .env file for environment variables
-	-  run composer install
-	-  generate the database and the tables
-	-  generate the react.js front-end
-	-  start up docker
+	- install composer locally
+	- install yarn locally
+	- copy the .env file for environment variables
+	- run composer install
+	- generate the database and the tables
+	- generate the react.js front-end
+	- start up docker
 
 Access the webpage at `http://localhost:81`.
 

@@ -8,3 +8,9 @@
 /vendor/
 ###< symfony/framework-bundle ###
 yarn-error.log
+
+scripts/.composer
+!scripts/.composer/.gitkeep
+
+scripts/.yarn
+!scripts/.yarn/.gitkeep

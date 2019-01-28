@@ -1,17 +1,34 @@
 #!/bin/bash
 SYMFONY_DIR=src
 
+YARN_DEFAULT_VERSION="1.13.0"
+YARN_DIRECTORY=$SYMFONY_DIR/scripts/.yarn
+
+COMPOSER_DEFAULT_VERSION="1.8.0"
+COMPOSER_DIRECTORY=$SYMFONY_DIR/scripts/.composer
+
+./$SYMFONY_DIR/install_yarn.sh $YARN_DEFAULT_VERSION $YARN_DIRECTORY
+
+echo ""
+
+./$SYMFONY_DIR/install_composer.sh $COMPOSER_DEFAULT_VERSION $COMPOSER_DIRECTORY
+
 echo ""
 echo "Copying .env.dist to .env"
 cp $SYMFONY_DIR/.env.prod $SYMFONY_DIR/.env
 
 echo ""
-echo "Changing directory into Symfony to run composer"
-cd $SYMFONY_DIR
+echo "Running composer"
+./$COMPOSER_DIRECTORY/bin/composer install -d $SYMFONY_DIR
 
 echo ""
-echo "Running composer"
-composer install
+echo "Building Front End"
+./$YARN_DIRECTORY/bin/yarn --cwd=$SYMFONY_DIR install
+./$YARN_DIRECTORY/bin/yarn  --cwd=$SYMFONY_DIR run build
+
+echo ""
+echo "Entering symfony directory"
+cd $SYMFONY_DIR
 
 echo ""
 echo "Generating database"
@@ -21,10 +38,6 @@ echo ""
 echo "Running migrations"
 echo "y" | bin/console doctrine:migrations:migrate
 
-echo ""
-echo "Building Front End"
-yarn install
-yarn run build
 
 echo ""
 echo "Return to parent directory"
